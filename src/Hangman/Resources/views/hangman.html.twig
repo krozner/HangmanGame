@@ -1,0 +1,30 @@
+{% extends '@resources/views/base.html.twig' %}
+
+{% block body %}
+    <div class="wrapper">
+        <h1>Hangman</h1>
+    </div>
+    <div class="wrapper">
+        <div id="buttons">
+            <ul id="alphabet">
+                {% for letter in alphabet %}
+                    <li class="letter">{{ letter }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <p id="catagory"></p>
+        <div id="hold">xxx</div>
+        <p id="mylives"></p>
+        <p id="clue"></p>
+        <canvas id="stickman">This Text will show if the Browser does NOT support HTML5 Canvas tag</canvas>
+        <div class="container">
+            <button id="hint">Hint</button>
+            <button id="reset">Play again</button>
+        </div>
+
+
+    </div>
+
+    <script src="{{ path('hangman_scripts') }}" type="text/javascript"/>
+
+{% endblock %}

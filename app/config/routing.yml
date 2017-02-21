@@ -1,0 +1,3 @@
+hangman_app_bundle:
+    resource: "@HangmanAppBundle/Controller/"
+    type:     annotation
