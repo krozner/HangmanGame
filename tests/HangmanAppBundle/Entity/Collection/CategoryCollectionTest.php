@@ -4,11 +4,11 @@ namespace Tests\HangmanAppBundle\Entity\Collection;
 
 use Hangman\Bundle\AppBundle\Entity\Category;
 use Hangman\Bundle\AppBundle\Entity\Collection\CategoryCollection;
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Symfony\Bundle\FrameworkBundle\Tests\TestCase;
 
-class CategoryCollectionTest extends WebTestCase
+class CategoryCollectionTest extends TestCase
 {
-    public function testGetCategoryByName()
+    public function testGettingCategoryByName()
     {
         $category = $this->createMock(Category::class, ['getName']);
         $category
@@ -17,6 +17,7 @@ class CategoryCollectionTest extends WebTestCase
             ->will($this->returnValue('CategoryUniqueName'));
 
         $collection = new CategoryCollection([ $category ]);
+
         $this->assertTrue($collection->getCategory('CategoryUniqueName') instanceof Category);
     }
 }
